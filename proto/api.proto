@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package flowing;
+
+import "tree.proto";
+
+//
+service Flowing {
+  //
+  rpc GetTree(GetTreeRequest) returns (GetTreeResponse);
+}
+
+//
+message GetTreeRequest {
+  //
+  optional string root = 1;
+}
+
+//
+message GetTreeResponse {
+  //
+  TreeNode root = 1;
+}

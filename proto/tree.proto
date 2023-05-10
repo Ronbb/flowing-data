@@ -6,4 +6,6 @@ package flowing;
 message TreeNode {
   //
   string id = 1;
+  //
+  repeated TreeNode children = 2;
 }

@@ -1,5 +1,5 @@
 pub mod api {
-    use tonic::include_proto;
+    tonic::include_proto!("flowing");
 
-    include_proto!("flowing");
+    pub mod tree;
 }

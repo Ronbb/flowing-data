@@ -9,12 +9,14 @@ Future<void> main() async {
       port: 8113,
       options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
     );
-    final stub = FlowingClient(channel);
+    final stub = TreeApiClient(channel);
 
     final request = GetTreeRequest(root: '@root');
     final response = await stub.getTree(request);
 
     expect(request.root, equals(response.root.id));
+
+    expect(response.root.children, hasLength(1));
 
     await channel.shutdown();
   });
